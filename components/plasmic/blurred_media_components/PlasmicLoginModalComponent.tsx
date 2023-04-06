@@ -182,57 +182,20 @@ function PlasmicLoginModalComponent__RenderFunc(props: {
         className={classNames(projectcss.all, sty.loginModalInnercontainer)}
       >
         {true ? (
-          <div className={classNames(projectcss.all, sty.freeBox__fgu1Q)}>
+          <div
+            className={classNames(projectcss.all, sty.freeBox__fgu1Q, {
+              [sty.freeBoxsignIn_signInNothingEntered__fgu1Q8Gw3T]: hasVariant(
+                $state,
+                "signIn",
+                "signInNothingEntered"
+              )
+            })}
+          >
             <IconIcon
               className={classNames(projectcss.all, sty.svg__b8HyV)}
               role={"img"}
             />
           </div>
-        ) : null}
-        {true ? (
-          <p.Stack
-            as={"div"}
-            data-plasmic-name={"loginModalBannercontainer"}
-            data-plasmic-override={overrides.loginModalBannercontainer}
-            hasGap={true}
-            className={classNames(
-              projectcss.all,
-              sty.loginModalBannercontainer,
-              {
-                [sty.loginModalBannercontainerglobal_lightMode_lightModeColors]:
-                  hasVariant(globalVariants, "lightMode", "lightModeColors")
-              }
-            )}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__zaw8Y
-              )}
-            >
-              {"Join"}
-            </div>
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"49px" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"auto" as const}
-              loading={"lazy" as const}
-              src={{
-                src: "/plasmic/blurred_media_components/images/image.png",
-                fullWidth: 2938,
-                fullHeight: 1333,
-                aspectRatio: undefined
-              }}
-            />
-          </p.Stack>
         ) : null}
         {(
           hasVariant(globalVariants, "lightMode", "lightModeColors")
@@ -247,29 +210,101 @@ function PlasmicLoginModalComponent__RenderFunc(props: {
                 $state,
                 "signIn",
                 "signInInfoEntered"
+              ),
+              [sty.freeBoxsignIn_signInNothingEntered__qkkje8Gw3T]: hasVariant(
+                $state,
+                "signIn",
+                "signInNothingEntered"
               )
             })}
           >
-            <Divider
-              className={classNames("__wab_instance", sty.divider__uxadp, {
-                [sty.dividerglobal_lightMode_lightModeColors__uxadpfsG7C]:
-                  hasVariant(globalVariants, "lightMode", "lightModeColors"),
-                [sty.dividersignIn_signInInfoEntered__uxadp3CWbz]: hasVariant(
-                  $state,
-                  "signIn",
-                  "signInInfoEntered"
-                ),
-                [sty.dividersignIn_signInNothingEntered__uxadp8Gw3T]:
-                  hasVariant($state, "signIn", "signInNothingEntered")
-              })}
-              showHeaderText={true}
-            >
-              {hasVariant($state, "signIn", "signInInfoEntered")
-                ? "Sign In"
+            {(
+              hasVariant($state, "signIn", "signInInfoEntered")
+                ? true
                 : hasVariant($state, "signIn", "signInNothingEntered")
-                ? "Sign In"
-                : "Sign Up"}
-            </Divider>
+                ? true
+                : false
+            ) ? (
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"loginModalBannercontainer"}
+                data-plasmic-override={overrides.loginModalBannercontainer}
+                hasGap={true}
+                className={classNames(
+                  projectcss.all,
+                  sty.loginModalBannercontainer,
+                  {
+                    [sty.loginModalBannercontainerglobal_lightMode_lightModeColors]:
+                      hasVariant(
+                        globalVariants,
+                        "lightMode",
+                        "lightModeColors"
+                      ),
+                    [sty.loginModalBannercontainersignIn_signInInfoEntered]:
+                      hasVariant($state, "signIn", "signInInfoEntered"),
+                    [sty.loginModalBannercontainersignIn_signInNothingEntered]:
+                      hasVariant($state, "signIn", "signInNothingEntered")
+                  }
+                )}
+              >
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__bMdfm
+                  )}
+                >
+                  {"Login to"}
+                </div>
+                <p.PlasmicImg
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"49px" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"100%" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"auto" as const}
+                  loading={"lazy" as const}
+                  src={{
+                    src: "/plasmic/blurred_media_components/images/image.png",
+                    fullWidth: 2938,
+                    fullHeight: 1333,
+                    aspectRatio: undefined
+                  }}
+                />
+              </p.Stack>
+            ) : null}
+            {(
+              hasVariant($state, "signIn", "signInInfoEntered")
+                ? true
+                : hasVariant($state, "signIn", "signInNothingEntered")
+                ? true
+                : true
+            ) ? (
+              <Divider
+                className={classNames("__wab_instance", sty.divider__zJxBs, {
+                  [sty.dividerglobal_lightMode_lightModeColors__zJxBsfsG7C]:
+                    hasVariant(globalVariants, "lightMode", "lightModeColors"),
+                  [sty.dividersignIn_signInInfoEntered__zJxBs3CWbz]: hasVariant(
+                    $state,
+                    "signIn",
+                    "signInInfoEntered"
+                  ),
+                  [sty.dividersignIn_signInNothingEntered__zJxBs8Gw3T]:
+                    hasVariant($state, "signIn", "signInNothingEntered")
+                })}
+                showHeaderText={true}
+              >
+                {hasVariant($state, "signIn", "signInInfoEntered")
+                  ? "Sign In"
+                  : hasVariant($state, "signIn", "signInNothingEntered")
+                  ? "Sign In"
+                  : "Sign Up"}
+              </Divider>
+            ) : null}
             {(
               hasVariant($state, "signIn", "signInInfoEntered")
                 ? true

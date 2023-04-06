@@ -36,6 +36,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Divider from "../../Divider"; // plasmic-import: UozlDIB79V/component
 import NormalDataField from "../../NormalDataField"; // plasmic-import: RPypyu0aOYg/component
 import SubscriptionSelectBox from "../../SubscriptionSelectBox"; // plasmic-import: uAYN8M7WCl/component
 import { TabsContainer } from "@plasmicpkgs/plasmic-tabs"; // plasmic-import: qT-BBamUwNg/codeComponent
@@ -109,6 +110,9 @@ export const PlasmicRegistrationAndPaymentForm__ArgProps =
 
 export type PlasmicRegistrationAndPaymentForm__OverridesType = {
   root?: p.Flex<"div">;
+  loginModalBannercontainer?: p.Flex<"div">;
+  img?: p.Flex<typeof p.PlasmicImg>;
+  divider?: p.Flex<typeof Divider>;
   registerEmailInput?: p.Flex<typeof NormalDataField>;
   registerPwInput?: p.Flex<typeof NormalDataField>;
   registerPwInputUserRecognized?: p.Flex<typeof NormalDataField>;
@@ -311,6 +315,99 @@ function PlasmicRegistrationAndPaymentForm__RenderFunc(props: {
         }
       )}
     >
+      {(
+        hasVariant(
+          $state,
+          "paymentManagement",
+          "paymentmanagePaymententeredNosub"
+        )
+          ? true
+          : hasVariant(
+              $state,
+              "signupReturningUser",
+              "returninguserNopaymentinfo"
+            )
+          ? true
+          : hasVariant($state, "signupNewUser", "newuserPaymententered")
+          ? true
+          : hasVariant($state, "signupNewUser", "newuserSubselected")
+          ? true
+          : hasVariant($state, "signupNewUser", "newuserPwentered")
+          ? true
+          : true
+      ) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"loginModalBannercontainer"}
+          data-plasmic-override={overrides.loginModalBannercontainer}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.loginModalBannercontainer, {
+            [sty.loginModalBannercontainerglobal_lightMode_lightModeColors]:
+              hasVariant(globalVariants, "lightMode", "lightModeColors"),
+            [sty.loginModalBannercontainerpaymentManagement_paymentmanagePaymententeredNosub]:
+              hasVariant(
+                $state,
+                "paymentManagement",
+                "paymentmanagePaymententeredNosub"
+              ),
+            [sty.loginModalBannercontainersignupNewUser_newuserPaymententered]:
+              hasVariant($state, "signupNewUser", "newuserPaymententered"),
+            [sty.loginModalBannercontainersignupNewUser_newuserPwentered]:
+              hasVariant($state, "signupNewUser", "newuserPwentered"),
+            [sty.loginModalBannercontainersignupNewUser_newuserSubselected]:
+              hasVariant($state, "signupNewUser", "newuserSubselected"),
+            [sty.loginModalBannercontainersignupReturningUser_returninguserNopaymentinfo]:
+              hasVariant(
+                $state,
+                "signupReturningUser",
+                "returninguserNopaymentinfo"
+              )
+          })}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__zWjue
+            )}
+          >
+            {"Join"}
+          </div>
+          <p.PlasmicImg
+            data-plasmic-name={"img"}
+            data-plasmic-override={overrides.img}
+            alt={""}
+            className={classNames(sty.img)}
+            displayHeight={"49px" as const}
+            displayMaxHeight={"none" as const}
+            displayMaxWidth={"100%" as const}
+            displayMinHeight={"0" as const}
+            displayMinWidth={"0" as const}
+            displayWidth={"auto" as const}
+            loading={"lazy" as const}
+            src={{
+              src: "/plasmic/blurred_media_components/images/image.png",
+              fullWidth: 2938,
+              fullHeight: 1333,
+              aspectRatio: undefined
+            }}
+          />
+        </p.Stack>
+      ) : null}
+      <Divider
+        data-plasmic-name={"divider"}
+        data-plasmic-override={overrides.divider}
+        className={classNames("__wab_instance", sty.divider, {
+          [sty.dividerglobal_lightMode_lightModeColors]: hasVariant(
+            globalVariants,
+            "lightMode",
+            "lightModeColors"
+          )
+        })}
+        showHeaderText={true}
+      >
+        {"Sign Up"}
+      </Divider>
       {(
         hasVariant(
           $state,
@@ -1720,6 +1817,9 @@ function PlasmicRegistrationAndPaymentForm__RenderFunc(props: {
 const PlasmicDescendants = {
   root: [
     "root",
+    "loginModalBannercontainer",
+    "img",
+    "divider",
     "registerEmailInput",
     "registerPwInput",
     "registerPwInputUserRecognized",
@@ -1731,6 +1831,9 @@ const PlasmicDescendants = {
     "paymentCcCvc",
     "normalButton"
   ],
+  loginModalBannercontainer: ["loginModalBannercontainer", "img"],
+  img: ["img"],
+  divider: ["divider"],
   registerEmailInput: ["registerEmailInput"],
   registerPwInput: ["registerPwInput"],
   registerPwInputUserRecognized: ["registerPwInputUserRecognized"],
@@ -1753,6 +1856,9 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  loginModalBannercontainer: "div";
+  img: typeof p.PlasmicImg;
+  divider: typeof Divider;
   registerEmailInput: typeof NormalDataField;
   registerPwInput: typeof NormalDataField;
   registerPwInputUserRecognized: typeof NormalDataField;
@@ -1826,6 +1932,9 @@ export const PlasmicRegistrationAndPaymentForm = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    loginModalBannercontainer: makeNodeComponent("loginModalBannercontainer"),
+    img: makeNodeComponent("img"),
+    divider: makeNodeComponent("divider"),
     registerEmailInput: makeNodeComponent("registerEmailInput"),
     registerPwInput: makeNodeComponent("registerPwInput"),
     registerPwInputUserRecognized: makeNodeComponent(
