@@ -1,0 +1,115 @@
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  min-width: 0;
+  padding: 0px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  margin-top: calc(0px - 9px);
+  height: calc(100% + 9px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 9px;
+}
+.root {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 0px;
+  min-width: 0;
+  padding: 0px;
+}
+.freeBox__ryPd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: 2px solid var(--token-7MQHTLH4G);
+}
+.freeBoxselected_selected__ryPDrHncw {
+  border-color: var(--token-lKbHp93LA);
+}
+.freeBox__rx5Mj {
+  display: flex;
+  flex-direction: column;
+}
+.freeBox__hvn0N {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+}
+.slotTargetChildren {
+  font-family: "Barlow", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--token-OYFemhVRO);
+}
+.freeBox__sm0Z3 {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  left: auto;
+  top: auto;
+  display: flex;
+  flex-direction: row;
+}
+.slotTargetSlot {
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: var(--token-OYFemhVRO);
+}
+.freeBox__jg0So {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 30px;
+  border: 3px solid var(--token-OYFemhVRO);
+}
+.freeBoxselected_selected__jg0SorHncw {
+  background: var(--token-lKbHp93LA);
+  border-style: none;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 18px;
+  height: 18px;
+  color: var(--token-OYFemhVRO);
+  flex-shrink: 0;
+  display: none;
+}
+.svgselected_selected {
+  display: block;
+}
